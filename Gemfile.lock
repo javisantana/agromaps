@@ -170,6 +170,7 @@ PLATFORMS
 DEPENDENCIES
   cartodb-rb-client!
   heroku
+  nokogiri
   rails (= 3.0.5)
   ruby-debug19
   uuidtools

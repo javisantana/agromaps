@@ -1,0 +1,43 @@
+/* Set the baseline */
+
+#grid {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#grid div.horiz{
+  height: 17px;
+  border-bottom: 1px dotted #AAA;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 12 column layout */
+
+#grid.grid-1 {
+  width: 960px;
+  margin-left: -480px;
+}
+
+#grid.grid-1 div.vert {
+  width: 59px;
+  border: solid #00CED1;
+  border-width: 0 1px;
+  margin-left: 19px;
+}
+
+#grid.grid-1 div.vert.first-line {
+  margin-left: 9px;
+}
+
+
+/* No layout */
+
+#grid.grid-2 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

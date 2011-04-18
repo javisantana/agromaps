@@ -91,8 +91,8 @@
 }
 
 input::-webkit-input-placeholder, 
-#new-plot #population, 
-#new-plot #plot-id {
+#new-plot #poligon_id, 
+#new-plot #plot_id {
   text-align: center;
   width: 35px;
 }

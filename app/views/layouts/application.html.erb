@@ -13,6 +13,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/autocomplete.css">
   <script src="javascripts/modernizr-1.7.min.js"></script>
   <%= csrf_meta_tag %>
 </head>
@@ -29,9 +30,9 @@
       <%= render :partial => 'layouts/search' %>
 
       <div id="plots">
-      <% 20.times do %>    
+      <% 20.times do %>
         <%= render :partial => 'layouts/plot' %>
-      <% end %> 
+      <% end %>
       </div>
 
       <div id="download">
@@ -57,29 +58,7 @@
 <script src="javascripts/hashgrid-5.min.js"></script>
 
 <script type="text/javascript" charset="utf-8">
-    var plots_data={
-        uuid:"98679876908908",
-        variable_rate_maps:[
-          {
-            name:"El Holandes Herrante",
-            size:23,
-            plots:[{
-                cartodb_id:1232323,
-                value:2333,
-                geojson:{"type":"MultiPolygon","coordinates":[[[[-3.716082572937012,40.430680970981257],[-3.710932731628418,40.423559235926099],[-3.707971572875977,40.421435636871017],[-3.707413673400879,40.42535607507169],[-3.705825805664062,40.429635625902307],[-3.716082572937012,40.430680970981257]]]]}               
-                }]
-          },
-          {
-              name:"Don Cipriano",
-              size:131,
-              plots:[{
-                  cartodb_id:323223,
-                  value:22,
-                  geojson:{"type":"MultiPolygon","coordinates":[[[[-3.712563514709473,40.424016617717136],[-3.714194297790527,40.418070411854252],[-3.704967498779297,40.417907047132431],[-3.70337963104248,40.42421263753269],[-3.712563514709473,40.424016617717136]]]]}
-                  }]
-          }
-        ]
-    };
+  var plots_data = <%= @variable_rate_maps.to_json.html_safe %>;
 </script>>
 
 </script>

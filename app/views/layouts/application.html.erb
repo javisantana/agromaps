@@ -25,11 +25,18 @@
   </hgroup>
 
   <div id="main" role="main">
-    <aside id="plots">
+    <aside>
       <%= render :partial => 'layouts/search' %>
-      <% 5.times do %>    
+
+      <div id="plots">
+      <% 20.times do %>    
         <%= render :partial => 'layouts/plot' %>
       <% end %> 
+      </div>
+
+      <div id="download">
+        <p><a href="#">Descargar HSF</a></p>
+      </div>
     </aside>
 
     <%= yield %>

@@ -38,10 +38,37 @@
 #plots {
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 300px;
+  bottom: 74px;
+  width: 264px;
   background-color: #e3edcf;
   overflow: auto;
+  padding: 18px;
+}
+
+.plot {
+  background-color: #FFF;
+
+}
+
+#download {
+  position: absolute;
+  bottom: 0;
+  height: 56px;
+  width: 300px;
+  background-color: #CCC;
+}
+
+#download p {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+#download a {
+  background-color: #FFF;
+  padding: 0.8em 2em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 
 #plots::-webkit-scrollbar {

@@ -97,10 +97,14 @@ def get_all():
     for c in comunindades():
         for p in provincias(c[0]):
             bbox = p[2]
+            for x in ['xmax','xmin','ymax','ymin']:
+                bbox[x] = float(bbox[x])/10000.0
             prov_csv.writerow([p[0], normalize(p[1]), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
             print p[1]
             for m in municipios(p[0]):
                 bbox = m[2]
+                for x in ['xmax','xmin','ymax','ymin']:
+                    bbox[x] = float(bbox[x])/10000.0
                 mun_csv.writerow([m[0], p[0], normalize(m[1]), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
                 print "\t", m[1]
 

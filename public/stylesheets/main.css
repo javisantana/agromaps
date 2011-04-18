@@ -1,3 +1,7 @@
+#document {
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif ;
+}
+
 
 #heading {
   background: #3f4136;  
@@ -35,10 +39,16 @@
  left: 300px;
 }
 
+#new-plot {
+ background-color: #f05d2c;  
+ height: 108px;
+  width: 300px;
+}
+
 #plots {
   position: absolute;
-  top: 0;
-  bottom: 74px;
+  top: 108px;
+  bottom: 56px;
   width: 264px;
   background-color: #e3edcf;
   overflow: auto;
@@ -81,12 +91,11 @@
 }
 
 #plots::-webkit-scrollbar-track-piece {
-  -webkit-border-radius: 3px;
+  background: #8f9e43;
 }
 
 #plots::-webkit-scrollbar-thumb:vertical {
-  background: #3b3c33;
-  -webkit-border-radius: 3px;
+  background-color: #b7c858;
   width: 25px;
 }
 
@@ -97,7 +106,6 @@
   left: 0;
   right: 0;
   overflow: hidden;
-
 }
 
 #contentinfo p {

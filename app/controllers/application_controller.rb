@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
   def render_404
     respond_to do |format|
       format.html do
@@ -11,5 +11,13 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  
+
+  def get_uuid
+    @uuid = sanitize_sql(params[:uuid])
+  end
+
+  def sanitize_sql(string)
+    string.gsub(/\\/, '\&\&').gsub(/'/, "''") if string.present?
+  end
+
 end

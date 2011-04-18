@@ -13,6 +13,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/autocomplete.css">
   <script src="javascripts/modernizr-1.7.min.js"></script>
   <%= csrf_meta_tag %>
 </head>
@@ -29,9 +30,9 @@
       <%= render :partial => 'layouts/search' %>
 
       <div id="plots">
-      <% 20.times do %>    
+      <% 20.times do %>
         <%= render :partial => 'layouts/plot' %>
-      <% end %> 
+      <% end %>
       </div>
 
       <div id="download">

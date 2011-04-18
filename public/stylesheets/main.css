@@ -19,7 +19,58 @@
   float: right;
 }
 
-#content {
-  width: 100%;
+#main  {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  bottom: 32px;
+
 }
 
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+ left: 300px;
+}
+
+#plots {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #e3edcf;
+  overflow: auto;
+}
+
+#plots::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+#plots::-webkit-scrollbar-button:start:decrement, pre::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+#plots::-webkit-scrollbar-track-piece {
+  -webkit-border-radius: 3px;
+}
+
+#plots::-webkit-scrollbar-thumb:vertical {
+  background: #3b3c33;
+  -webkit-border-radius: 3px;
+  width: 25px;
+}
+
+#contentinfo {
+  color: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0.72em;
+  background: #3f4136;  
+}

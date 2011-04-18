@@ -91,12 +91,11 @@
 }
 
 input::-webkit-input-placeholder, 
-#new-plot #poligon_id, 
+#new-plot #polygon_id, 
 #new-plot #plot_id {
   text-align: center;
   width: 35px;
 }
-
 
 #new-plot #search {
   float: right;

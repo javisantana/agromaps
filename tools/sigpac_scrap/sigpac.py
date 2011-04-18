@@ -88,6 +88,8 @@ def get_mun(p, n):
 def get_all():
     prov_csv = csv.writer(open('provinces.csv', 'wb'), delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     mun_csv = csv.writer(open('municipality.csv', 'wb'), delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    prov_csv.writerow(['id', 'name', 'xmin', 'ymin', 'xmax', 'ymax'])
+    mun_csv.writerow(['id', 'province_id', 'name', 'xmin', 'ymin', 'xmax', 'ymax'])
     for c in comunindades():
         for p in provincias(c[0]):
             bbox = p[2]
@@ -95,7 +97,7 @@ def get_all():
             print p[1]
             for m in municipios(p[0]):
                 bbox = m[2]
-                mun_csv.writerow([m[0], m[1].encode('utf-8'), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
+                mun_csv.writerow([m[0], p[0], m[1].encode('utf-8'), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
                 print "\t", m[1]
 
 if __name__ == '__main__':

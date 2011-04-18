@@ -10,7 +10,7 @@ class SearchsController < ApplicationController
   def municipalities
     render :nothing and return if params.blank? || params[:name].blank?
 
-    name = params[:name].gsub(/\\/, '\&\&').gsub(/'/, "''")
+    name = sanitize_sql(params[:name])
 
     result = CartoDB::Connection.query <<-SQL
       SELECT municipalities.id as municipality_id,

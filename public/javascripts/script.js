@@ -59,3 +59,7 @@ $(function() {
   map.init();
 });
 
+
+function displayPlots() {
+    
+}

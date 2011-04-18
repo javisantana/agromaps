@@ -31,54 +31,65 @@
   bottom: 0;
 }
 
-#map {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
- left: 300px;
-}
+#main aside {}
 
 #new-plot {
- background-color: #f05d2c;  
- height: 108px;
-  width: 300px;
+  position: absolute;
+  top: 0;
+  height: 144px;
+  width: 264px;
+  padding: 18px;
+  background-color: #e3edcf;
+}
+
+#new-plot form {
+  border: 1px solid #983d20;
+  background-color: #f05d2c;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 18px 20px;
+}
+
+#new-plot fieldset {
+  background-color: #FFF;
+  overflow: hidden;
+  padding: 2px;
+}
+
+#new-plot form span {
+  color: #AAA;
+}
+
+#new-plot form input, #new-plot form span {
+  float: left;
+  border: none;
+  outline: none;
+}
+
+#new-plot #municipality {
+  width: 100px;
+}
+
+#new-plot #population, #new-plot #plot-id {
+  text-align: center;
+  width: 38px;
+}
+
+
+#new-plot #search {
+  float: right;
 }
 
 #plots {
   position: absolute;
-  top: 108px;
-  bottom: 56px;
+  top: 144px;
+  bottom: 52px;
   width: 264px;
   background-color: #e3edcf;
   overflow: auto;
   padding: 18px;
-}
-
-.plot {
-  background-color: #FFF;
-
-}
-
-#download {
-  position: absolute;
-  bottom: 0;
-  height: 56px;
-  width: 300px;
-  background-color: #CCC;
-}
-
-#download p {
-  text-align: center;
-  margin: 1.5em 0;
-}
-
-#download a {
-  background-color: #FFF;
-  padding: 0.8em 2em;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
 }
 
 #plots::-webkit-scrollbar {
@@ -97,6 +108,41 @@
 #plots::-webkit-scrollbar-thumb:vertical {
   background-color: #b7c858;
   width: 25px;
+}
+
+.plot {
+  background-color: #FFF;
+
+}
+
+#download {
+  position: absolute;
+  bottom: 0;
+  height: 52px;
+  width: 300px;
+  background-color: #CCC;
+}
+
+#download p {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+#download a {
+  background-color: #FFF;
+  padding: 0.8em 2em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+ left: 300px;
 }
 
 #contentinfo {

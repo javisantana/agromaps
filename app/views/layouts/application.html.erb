@@ -57,6 +57,13 @@
 <!-- Grid, only for development -->
 <script src="javascripts/hashgrid-5.min.js"></script>
 
+<script type="text/javascript" charset="utf-8">
+  var plots_data = <%= @variable_rate_maps.to_json.html_safe %>;
+</script>>
+
+</script>
+
+
 <!--[if lt IE 7 ]>
   <script src="javascripts/dd_belatedpng.0.0.8a.min.js"></script>
   <script>DD_belatedPNG.fix("img, .png");</script>

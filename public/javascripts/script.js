@@ -17,7 +17,7 @@ $(function() {
         this.canvas.setCenter(new GLatLng(this.lat, this.lng), this.zoom);
         this.canvas.setUIToDefault();
 
-        $("#municipality").autocomplete({
+        $("input[name='municipality']").autocomplete({
           source: function(request, response) {
 
             $.get("http://localhost:3000/municipalities.json", {name:request.term}, function(data) {

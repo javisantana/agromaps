@@ -24,8 +24,7 @@
   top: 54px;
   left: 0;
   right: 0;
-  bottom: 32px;
-
+  bottom: 0;
 }
 
 #map {
@@ -71,6 +70,12 @@
   left: 0;
   right: 0;
   overflow: hidden;
-  padding: 0.72em;
-  background: #3f4136;  
+
+}
+
+#contentinfo p {
+  float: right;
+  padding: 0.72em 1.5em;
+  background: #3b3c33;
+  color: #FFF;
 }

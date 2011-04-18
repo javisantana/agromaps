@@ -1,5 +1,3 @@
-ROOT = Rails.root 
-
 def v(no)
   v = no.empty? ? 1 : no.sort.last.scan(/\d+/).join('').to_i + 1
   v = "%03d" % v
@@ -14,7 +12,7 @@ end
 def update(fn, path)
   a = Array.new
   fn = fn.split('.')
-  Dir.chdir("#{ROOT}/public/#{path}")
+  Dir.chdir("#{Rails.root}/public/#{path}")
   Dir.glob("*.#{fn.last}").each do |f| 
     a << f if f =~ /^#{fn.first}-(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+).min.#{fn.last}$/
   end
@@ -38,14 +36,14 @@ namespace :ui do
 
   desc "Compress images"
   task :img do
-    Dir.chdir(File.join(ROOT, 'public'))
+    Dir.chdir(File.join(Rails.root, 'public'))
     Dir['*.png'].each { |file| system "smusher #{file}" }
     Dir['images/**/*'].each { |file| system "smusher #{file}" }
   end
 
   desc "Remove generated files"
   task :cleanup do
-    Dir.chdir(File.join(ROOT, 'public'))
+    Dir.chdir(File.join(Rails.root, 'public'))
     system 'rm stylesheets/style-*.min.css'
     system 'rm javascripts/application-*.min.js'
   end

@@ -19,7 +19,7 @@ class SearchsController < ApplicationController
              provinces.name as province_name
       FROM municipalities
       INNER JOIN provinces ON provinces.id = municipalities.province_id
-      WHERE municipalities.name ilike '%#{name}% LIMIT 5'
+      WHERE municipalities.name ilike '%#{name}%' LIMIT 5
     SQL
 
     municipalities = result.rows || []

@@ -1,4 +1,10 @@
 $(function() {
+
+  var spinner = {
+    start: function() { $("#spinner").show();},
+    stop:  function() { $("#spinner").hide();}
+  };
+
   var map = {
     lat: 37.4419,
     lng: -122.1419,

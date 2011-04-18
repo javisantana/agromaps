@@ -6,5 +6,4 @@ $(function() {
     map.setUIToDefault();
   }
 
-
 });

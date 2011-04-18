@@ -86,16 +86,22 @@ def get_mun(p, n):
         pickle.dump(polis_data, open(name,  'wb'))
 
 def get_all():
-    prov_csv = csv.writer(open('provinces.csv', 'wb'), delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    mun_csv = csv.writer(open('municipality.csv', 'wb'), delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    prov_csv = csv.writer(open('provinces.csv', 'wb'), delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+    mun_csv = csv.writer(open('municipality.csv', 'wb'), delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+    prov_csv.writerow(['id', 'name', 'bbox_xmin', 'bbox_ymin', 'bbox_xmax', 'bbox_ymax'])
+    mun_csv.writerow(['id', 'province_id', 'name', 'bbox_xmin', 'bbox_ymin', 'bbox_xmax', 'bbox_ymax'])
+
+    def normalize(s):
+        return s.replace('"','').replace(',', '').encode('utf-8')
+
     for c in comunindades():
         for p in provincias(c[0]):
             bbox = p[2]
-            prov_csv.writerow([p[0], p[1].encode('utf-8'), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
+            prov_csv.writerow([p[0], normalize(p[1]), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
             print p[1]
             for m in municipios(p[0]):
                 bbox = m[2]
-                mun_csv.writerow([m[0], m[1].encode('utf-8'), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
+                mun_csv.writerow([m[0], p[0], normalize(m[1]), bbox['xmin'], bbox['ymin'], bbox['xmax'], bbox['ymax']])
                 print "\t", m[1]
 
 if __name__ == '__main__':

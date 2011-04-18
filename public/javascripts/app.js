@@ -1,13 +1,15 @@
 $(function() {
-
-  var lat = 37.4419;
-  var lng = -122.1419;
-  var zoom = 13;
-
-  if (GBrowserIsCompatible()) {
-    var map = new GMap2(document.getElementById("map"));
-    map.setCenter(new GLatLng(lat, lng), zoom);
-    map.setUIToDefault();
+  var map = {
+    lat: 37.4419,
+    lng: -122.1419,
+    zoom: 13,
+    init: function() {
+      if (GBrowserIsCompatible()) {
+        this.canvas = new GMap2(document.getElementById("map"));
+        this.canvas.setCenter(new GLatLng(this.lat, this.lng), this.zoom);
+        this.canvas.setUIToDefault();
+      }
+    }
   }
-
+  map.init();
 });

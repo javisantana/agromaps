@@ -1,13 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Agromaps</title>
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="index, follow" name="robots">
+
   <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="javascripts/modernizr-1.7.min.js"></script>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
 <%= yield %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+<script>window.jQuery || document.write("<script src='javascripts/libs/jquery-1.5.2.min.js'>\x3C/script>")</script>
+<script src="javascripts/plugins.js"></script>
+<script src="javascripts/app.js"></script>
+
+<!-- Grid, only for development -->
+<script src="javascripts/hashgrid-5.min.js"></script>
+
+<!--[if lt IE 7 ]>
+  <script src="javascripts/dd_belatedpng.0.0.8a.min.js"></script>
+  <script>DD_belatedPNG.fix("img, .png");</script>
+<![endif]-->
+
+<!--[if lt IE 8 ]>
+  <script src="javascripts/imgsizer.min.js"></script>
+  <script src="javascripts/selectivizr-1.0.1.min.js"></script>
+<![endif]-->
+
+<!--
+<script>
+  var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+  s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+--!>
 
 </body>
 </html>

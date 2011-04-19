@@ -12,6 +12,22 @@ var counter=0;
 var map;
 var bbox;
 
+/**
+ * given coordinates center map showing all
+ */
+
+function center_map_in(coordinates) {
+    if (coordinates) {
+        bbox = new GLatLngBounds();
+        for(var i = 0; i < coordinates.length; ++i) {
+            var c = coordinates[i];
+            bbox.extend(new GLatLng(c[1], c[0]));
+        }
+    }
+    map.canvas.setCenter( bbox.getCenter( ), map.canvas.getBoundsZoomLevel( bbox ) - 1 );
+}
+
+
 $(function() {
 
   var spinner = {
@@ -30,6 +46,7 @@ $(function() {
         this.canvas = new GMap2(document.getElementById("map"));
         this.canvas.setCenter(new GLatLng(this.lat, this.lng), this.zoom);
         this.canvas.setMapType(G_SATELLITE_MAP);
+        this.canvas.addOverlay(new CatastroOverlay());
         //this.canvas.setUIToDefault();
 
         $("form").submit(function() {
@@ -40,8 +57,10 @@ $(function() {
           console.log(_this.province_id);
 
           $.get("/plots.json", {province_id:_this.province_id, municipality_id:_this.municipality_id, polygon_id:polygon_id, plot_number:plot_id}, function(data) {
-            console.log("ok");
-            //   console.log(data);
+            // center map in plot
+            if(data && data.coordinates) {
+                center_map_in(data.coordinates[0]);
+            }
           });
 
           return false;

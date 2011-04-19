@@ -29,6 +29,12 @@ class SearchsController < ApplicationController
     end
   end
 
+  def test
+    respond_to do |format|
+      format.json{ render :json => "test" }
+    end
+  end 
+
   def plots
     url = URI.parse(SIGPAC_SERVER + PARCELAS)
     res = Net::HTTP.start(url.host, url.port) do |http|
@@ -45,8 +51,8 @@ class SearchsController < ApplicationController
       plot_number = data_row.xpath('code').first.content
       next if plot_number.to_i != params[:plot_number].to_i
       x_min = data_row.xpath('utmRange/xMin').first.content.to_f / 10_000
-      y_min = data_row.xpath('utmRange/xMax').first.content.to_f / 10_000
-      x_max = data_row.xpath('utmRange/yMin').first.content.to_f / 10_000
+      y_min = data_row.xpath('utmRange/yMin').first.content.to_f / 10_000
+      x_max = data_row.xpath('utmRange/xMax').first.content.to_f / 10_000
       y_max = data_row.xpath('utmRange/yMax').first.content.to_f / 10_000
     end
 

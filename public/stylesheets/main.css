@@ -31,54 +31,95 @@
   bottom: 0;
 }
 
-#map {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
- left: 300px;
-}
+#main aside {}
 
 #new-plot {
- background-color: #f05d2c;  
- height: 108px;
-  width: 300px;
+  position: absolute;
+  top: 0;
+  height: 144px;
+  width: 264px;
+  padding: 18px;
+  background: #e3edcf;
+  color: #6e2b15; 
+}
+
+#new-plot form {
+  border: 1px solid #983d20;
+  background: #f05d2c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e55c2f), to(#c34e27));;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 9px 12px 12px 12px;
+  -webkit-box-shadow: #FFF 0 0 2px;
+}
+
+#new-plot fieldset, #new-plot #search {
+  margin-top: 0.72em;
+}
+
+#new-plot fieldset {
+  float: left;
+  width: 190px;
+  background-color: #FFF;
+  overflow: hidden;
+  padding: 4px 6px;
+  font-size: 1.2em;
+  border: 1px solid #95391b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#new-plot form p {
+  font-size: 0.9em;
+}
+
+#new-plot form span {
+  color: #666;
+}
+
+#new-plot form input, #new-plot form span {
+  float: left;
+  border: none;
+  outline: none;
+}
+
+#new-plot #municipality {
+  width: 96px;
+}
+
+input::-webkit-input-placeholder, 
+#new-plot #polygon_id, 
+#new-plot #plot_id {
+  text-align: center;
+  width: 35px;
+}
+
+#new-plot #search {
+  float: right;
+  padding: 0.4em 0.6em;
+  float: right;
+  font-size: 1.2em;
+  background-color: #b1c254;
+  border: 1px solid #95391b;
+  color: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
 #plots {
-  position: absolute;
-  top: 108px;
-  bottom: 56px;
-  width: 264px;
   background-color: #e3edcf;
+  border-top: 1px solid #8f9e43;
+  position: absolute;
+  top: 136px;
+  bottom: 52px;
+  width: 264px;
+
   overflow: auto;
   padding: 18px;
-}
-
-.plot {
-  background-color: #FFF;
-
-}
-
-#download {
-  position: absolute;
-  bottom: 0;
-  height: 56px;
-  width: 300px;
-  background-color: #CCC;
-}
-
-#download p {
-  text-align: center;
-  margin: 1.5em 0;
-}
-
-#download a {
-  background-color: #FFF;
-  padding: 0.8em 2em;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
 }
 
 #plots::-webkit-scrollbar {
@@ -97,6 +138,42 @@
 #plots::-webkit-scrollbar-thumb:vertical {
   background-color: #b7c858;
   width: 25px;
+}
+
+.plot {
+  background-color: #FFF;
+
+}
+
+#download {
+  position: absolute;
+  bottom: 0;
+  height: 52px;
+  width: 300px;
+  background-color: #e3edcf;
+  border-top: 1px solid #8f9e43;
+}
+
+#download p {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+#download a {
+  background-color: #FFF;
+  padding: 0.8em 2em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+ left: 300px;
 }
 
 #contentinfo {

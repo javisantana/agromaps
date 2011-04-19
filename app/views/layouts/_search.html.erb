@@ -1,16 +1,17 @@
 <div id="new-plot">
   <form>
-    <h1>Añadir nueva parcelaca</h1>
+    <h1>Añadir parcelaca</h1>
+    <p>Busca por localidad, parcela y polígono.</p>
 
     <fieldset id="plate">
-      <input type="text" placeholder="Municipio" name="municipality"> 
+      <input type="text" placeholder="Ej. Alaejos, VA" name="municipality" id="municipality"> 
       <span>-</span>
-      <input type="text" placeholder="Pol." name="population"> 
+      <input type="text" placeholder="0000" maxlength="4" name="polygon_id" id="polygon_id"> 
       <span>-</span>
-      <input type="text" placeholder="Parcela" name="plot_id">
+      <input type="text" placeholder="0000" maxlength="4" name="plot_id" id="plot_id">
     </fieldset>
 
-    <input type="submit" name="search" value="Buscar">
+    <input type="submit" id="search" name="search" value="»">
   </form>
 </div>
 
